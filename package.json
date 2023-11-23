@@ -1,0 +1,38 @@
+{
+  "name": "navi-express",
+  "version": "1.0.0",
+  "description": "NaviExpress is a streamlined API framework for Bun, crafted with TypeScript. Drawing inspiration from the Symfony framework, it's designed for simplicity and ease of use.",
+  "main": "dist/NaviExpress.js",
+  "module": "dist/NaviExpress.js",
+  "type": "module",
+  "scripts": {
+    "build": "bun build ./src/NaviExpress.ts --outdir ./dist --target bun"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/noob-squad/navi-express"
+  },
+  "keywords": [
+    "bun",
+    "typescript",
+    "api",
+    "framework",
+    "symfony-inspired"
+  ],
+  "authors": [
+    "Volodymyr Sergeyev <volodymyr.sergeyev@gmail.com> (https://www.linkedin.com/in/volodymyrser)",
+    "Ruben Freire Andrade <ruben.freireandrade17@gmail.com> (https://www.linkedin.com/in/ruben-freire-andrade-5125a71b9)",
+    "Dom <dom@example.com> (https://linkedin-or-github.com/dom)"
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/noob-squad/navi-express/issues"
+  },
+  "homepage": "https://github.com/noob-squad/navi-express#readme",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
