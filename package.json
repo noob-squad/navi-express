@@ -5,6 +5,9 @@
   "main": "dist/NaviExpress.js",
   "module": "dist/NaviExpress.js",
   "type": "module",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "build": "bun build ./src/NaviExpress.ts --outdir ./dist --target bun && bun run update_license.js ./dist",
     "update-license": "bun run update_license.js ./src"
