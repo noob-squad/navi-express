@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/noob-squad/navi-express"
+    "url": "git+https://github.com/noob-squad/navi-express.git"
   },
   "keywords": [
     "bun",
