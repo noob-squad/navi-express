@@ -9,8 +9,9 @@
     "dist/"
   ],
   "scripts": {
-    "build": "bun build ./src/NaviExpress.ts --outdir ./dist --target bun && bun run update_license.js ./dist",
-    "update-license": "bun run update_license.js ./src"
+    "build": "bun build ./src/NaviExpress.ts --outdir ./dist --target bun && bun run update-license.js ./dist",
+    "update-license": "bun run update-license.js ./src",
+    "update-version": "bun run update-version.js"
   },
   "repository": {
     "type": "git",
