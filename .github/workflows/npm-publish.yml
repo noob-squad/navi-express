@@ -21,9 +21,6 @@ jobs:
     - name: Install dependencies with Bun
       run: bun install
 
-    - name: Auto increment patch version in package.json
-      run: bun run update-version
-
     - name: Build package with Bun
       run: bun run build
 

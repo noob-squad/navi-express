@@ -1,6 +1,6 @@
 {
-  "name": "navi-express",
-  "version": "1.0.0",
+  "name": "@noob-squad/navi-express",
+  "version": "0.0.1",
   "description": "NaviExpress is a streamlined API framework for Bun, crafted with TypeScript. Drawing inspiration from the Symfony framework, it's designed for simplicity and ease of use.",
   "main": "dist/NaviExpress.js",
   "module": "dist/NaviExpress.js",
@@ -10,8 +10,7 @@
   ],
   "scripts": {
     "build": "bun build ./src/NaviExpress.ts --outdir ./dist --target bun && bun run update-license.js ./dist",
-    "update-license": "bun run update-license.js ./src",
-    "update-version": "bun run update-version.js"
+    "update-license": "bun run update-license.js ./src"
   },
   "repository": {
     "type": "git",
