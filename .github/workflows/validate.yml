@@ -1,9 +1,9 @@
-name: Publish NPM Package
+name: Validate changes
 
 on:
   push:
     branches:
-      - main
+      - "**"
 
 jobs:
   publish-npm:
@@ -16,15 +16,12 @@ jobs:
       uses: oven-sh/setup-bun@v1
       with:
         bun-version: 'latest'
-        registry-url: 'https://registry.npmjs.org/'
 
     - name: Install dependencies with Bun
       run: bun install
 
+    - name: Check for type errors using TSC
+      run: bun run lint
+
     - name: Build package with Bun
       run: bun run build
-
-    - name: Publish to npm
-      run: npm publish --access public
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

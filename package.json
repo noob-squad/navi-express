@@ -10,8 +10,9 @@
     "dist/"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts && bun run update-license.js ./dist",
     "lint": "tsc",
+    "build": "tsup src/index.ts --format cjs,esm --dts && bun run update-license.js ./dist",
+    "release": "bun run build && changeset publish",
     "update-license": "bun run update-license.js ./src"
   },
   "repository": {

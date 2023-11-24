@@ -1,11 +1,16 @@
 {
   "compilerOptions": {
-    "target": "ES2016",
-    "module": "CommonJS",
+    "target": "ES2022",
+    "module": "ESNext",
     "esModuleInterop": true,
+    //"verbatimModuleSyntax": true, //TODO: Nice to add later
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "allowJs": true,
     "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "moduleResolution": "Bundler",
     "noUncheckedIndexedAccess": true,
     "noEmit": true,
     "types": ["bun-types"],
