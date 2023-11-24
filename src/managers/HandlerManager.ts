@@ -71,7 +71,7 @@ export default class HandlerManager {
     private async loadEventHandlers() {
         const eventHandlers = this.configManager.getEventHandlers();
         for (const eventType in eventHandlers) {
-            await this.loadEventHandler(eventType, eventHandlers[eventType]);
+            await this.loadEventHandler(eventType, eventHandlers[eventType]!);
         }
     }
 

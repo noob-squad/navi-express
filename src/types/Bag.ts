@@ -20,8 +20,7 @@ export default class Bag<T> {
     }
 
     public get(key: string, defaultValue: T | null = null): T | null {
-        if (!this.exists(key)) return defaultValue;
-        return this.bag[key];
+        return this.bag[key] ?? defaultValue;
     }
 
     public exists(key: string): boolean {

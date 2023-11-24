@@ -38,10 +38,10 @@ export default class ControllerManager {
     public getRouteOptions(req: Request): Bag<string> {
         const path = new URL(req.url).pathname;
         const method = req.method;
-        if (!this.routeMap[path] || !this.routeMap[path][method]) {
+        if (!this.routeMap[path] || !this.routeMap[path]![method]) {
             return new Bag<string>();
         }
-        return this.routeMap[path][method]!.options;
+        return this.routeMap[path]![method]!.options;
     }
 
     public processRequest(req: Request): ResAny {
@@ -50,10 +50,10 @@ export default class ControllerManager {
         if (!this.routeMap[path]) {
             throw new Error('Not Found.');
         }
-        if (!this.routeMap[path][method]) {
+        if (!this.routeMap[path]![method]) {
             throw new Error('Method Not Allowed.');
         }
-        return this.routeMap[path][method]!.handler(req);
+        return this.routeMap[path]![method]!.handler(req);
     }
 
     private async loadControllers() {
@@ -75,8 +75,8 @@ export default class ControllerManager {
 
         let match;
         while ((match = regex.exec(classContent)) !== null) {
-            const path = match[1];
-            const functionName = match[match.length - 1];
+            const path: string = match[1]!;
+            const functionName: string = match[match.length - 1]!;
             const options = new Bag<string>();
 
             if (!path && !functionName) throw new Error(`Path handler parse error!\nPath: ${path}`);
@@ -84,23 +84,23 @@ export default class ControllerManager {
             options.set('name', path);
 
             if (match[2] && !match[4]) {
-                if (match[2].toLowerCase() === 'method') options.set('method', match[3].toUpperCase());
-                else options.set('name', match[3]);
+                if (match[2].toLowerCase() === 'method') options.set('method', match[3]!.toUpperCase());
+                else options.set('name', match[3]!);
             } else if (match[2] && match[4]) {
                 if (match[2] === match[4]) throw new Error(`Path handler duplicated params!\nPath: ${path}`);
                 if (match[2].toLowerCase() === 'method') {
-                    options.set('method', match[3].toUpperCase());
-                    options.set('name', match[5]);
+                    options.set('method', match[3]!.toUpperCase());
+                    options.set('name', match[5]!);
                 } else {
-                    options.set('method', match[5].toUpperCase());
-                    options.set('name', match[3]);
+                    options.set('method', match[5]!.toUpperCase());
+                    options.set('name', match[3]!);
                 }
             }
 
             if (!this.routeMap[path]) this.routeMap[path] = {};
             ['GET', 'POST', 'PATCH', 'DELETE'].forEach(m => {
                 if (options.exists('method') && options.get('method') !== m) return;
-                this.routeMap[path][m] = {handler: classInstance[functionName], options};
+                this.routeMap[path]![m] = {handler: classInstance[functionName]!, options};
             });
         }
     }
