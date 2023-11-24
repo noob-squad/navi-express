@@ -53,7 +53,7 @@ export default class NaviExpress {
                 fetch: this.createServeHandler(),
             });
 
-            console.log(`Listening on http://localhost:${Bun.env.PORT!}`);
+            console.log(`Listening on http://localhost:${Bun.env.PORT ?? 3000}`);
         });
     }
 
