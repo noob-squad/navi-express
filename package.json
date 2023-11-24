@@ -36,6 +36,7 @@
   },
   "homepage": "https://github.com/noob-squad/navi-express#readme",
   "devDependencies": {
+    "@changesets/cli": "^2.26.2",
     "bun-types": "latest",
     "tsup": "^8.0.1",
     "typescript": "^5.0.0"
