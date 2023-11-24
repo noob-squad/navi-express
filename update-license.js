@@ -20,7 +20,7 @@ function addLicenseToFiles(dir) {
     const filePath = path.join(dir, file);
     if (fs.statSync(filePath).isDirectory()) {
       addLicenseToFiles(filePath);
-    } else if (path.extname(file) === '.ts' || path.extname(file) === '.js') {
+    } else if (['.ts', '.js', '.cts', '.cjs'].includes(path.extname(file))) {
       const content = fs.readFileSync(filePath, 'utf8');
       if (!content.startsWith(licenseHeader)) {
         fs.writeFileSync(filePath, licenseHeader + '\n\n' + content, 'utf8');
