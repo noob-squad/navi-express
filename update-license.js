@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+import {readdirSync, statSync, readFileSync, writeFileSync} from 'fs';
+import {join, extname} from 'path';
 
 const licenseHeader = `/*
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,17 +16,17 @@ const licenseHeader = `/*
  */`;
 
 function addLicenseToFiles(dir) {
-  fs.readdirSync(dir).forEach(file => {
-    const filePath = path.join(dir, file);
-    if (fs.statSync(filePath).isDirectory()) {
-      addLicenseToFiles(filePath);
-    } else if (['.ts', '.js', '.cts', '.cjs'].includes(path.extname(file))) {
-      const content = fs.readFileSync(filePath, 'utf8');
-      if (!content.startsWith(licenseHeader)) {
-        fs.writeFileSync(filePath, licenseHeader + '\n\n' + content, 'utf8');
-      }
-    }
-  });
+    readdirSync(dir).forEach(file => {
+        const filePath = join(dir, file);
+        if (statSync(filePath).isDirectory()) {
+            addLicenseToFiles(filePath);
+        } else if (['.ts', '.js', '.cts', '.cjs'].includes(extname(file))) {
+            const content = readFileSync(filePath, 'utf8');
+            if (!content.startsWith(licenseHeader)) {
+                writeFileSync(filePath, licenseHeader + '\n\n' + content, 'utf8');
+            }
+        }
+    });
 }
 
 // Get directory from command line arguments
@@ -34,8 +34,8 @@ const directory = process.argv[2];
 
 // Validate the directory
 if (!directory) {
-  console.error('Please specify a directory');
-  process.exit(1);
+    console.error('Please specify a directory');
+    process.exit(1);
 }
 
 addLicenseToFiles(directory);

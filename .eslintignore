@@ -1,0 +1,9 @@
+# Ignore artifacts:
+dist
+
+# Ignore GitHub and Changeset fiels
+.changeset
+.github
+
+# Ignore helper script:
+update-license.js

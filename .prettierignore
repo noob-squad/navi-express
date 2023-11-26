@@ -1,3 +1,9 @@
 # Ignore artifacts:
 dist
-node_modules
+
+# Ignore GitHub and Changeset fiels
+.changeset
+.github
+
+# Ignore all MD files:
+**/*.md
