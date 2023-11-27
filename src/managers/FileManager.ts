@@ -27,6 +27,10 @@ export default class FileManager {
         this.projectAbsolutePath = this.findProjectRoot(__dirname);
     }
 
+    public isFileExists(relativeFilePath: string): boolean {
+        return f.existsSync(this.toProjectAbsolutePath(relativeFilePath));
+    }
+
     public toProjectAbsolutePath(relativePath: string): string {
         /** If relativePath starts with / character then trimming it */
         return p.resolve(this.projectAbsolutePath, relativePath.startsWith('/') ? relativePath.slice(1) : relativePath);

@@ -27,7 +27,16 @@ export default class ConfigManager {
 
     public init(): void {
         this.config = {};
-        this.config = JSON.parse(this.fileManager.readFileContent(Bun.env.LUCIDUS_CONFIG ?? '/config/config.json'));
+        const configPath = Bun.env.LUCIDUS_CONFIG ?? '/config/config.json';
+        if (this.fileManager.isFileExists(configPath)) {
+            this.config = JSON.parse(this.fileManager.readFileContent(configPath));
+        } else {
+            /**
+             * If neither a default configuration nor an environment-specific config path is found,
+             * then the welcome controller will be used.
+             */
+            this.config = {controllers: {path: '/welcome'}};
+        }
     }
 
     public getControllersPath(): string {
