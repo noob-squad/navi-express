@@ -39,15 +39,15 @@
     "homepage": "https://github.com/noob-squad/navi-express#readme",
     "devDependencies": {
         "@changesets/cli": "^2.26.2",
-        "@typescript-eslint/eslint-plugin": "^6.10.0",
-        "@typescript-eslint/parser": "^6.10.0",
+        "@typescript-eslint/eslint-plugin": "latest",
+        "@typescript-eslint/parser": "latest",
         "bun-types": "latest",
-        "eslint": "^8.53.0",
-        "eslint-config-standard-with-typescript": "^39.1.1",
-        "eslint-plugin-import": "^2.29.0",
-        "eslint-plugin-n": "^16.3.0",
-        "eslint-plugin-promise": "^6.1.1",
-        "prettier": "3.0.3",
+        "eslint": "latest",
+        "eslint-config-standard-with-typescript": "latest",
+        "eslint-plugin-import": "latest",
+        "eslint-plugin-n": "latest",
+        "eslint-plugin-promise": "latest",
+        "prettier": "latest",
         "tsup": "^8.0.1",
         "typescript": "^5.0.0"
     }
