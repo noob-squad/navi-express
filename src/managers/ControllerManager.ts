@@ -58,7 +58,9 @@ export default class ControllerManager {
 
     private async loadControllers() {
         const controllerDirPath = this.configManager.getControllersPath();
-        const controllerFiles = this.fileManager.listFiles(controllerDirPath);
+        const controllerFiles = this.fileManager.isExists(controllerDirPath)
+            ? this.fileManager.listFiles(controllerDirPath)
+            : [];
 
         for (const file of controllerFiles) {
             const classPath = `${controllerDirPath}/${file}`;

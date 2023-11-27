@@ -28,7 +28,7 @@ export default class ConfigManager {
     public init(): void {
         this.config = {};
         const configPath = Bun.env.LUCIDUS_CONFIG ?? '/config/config.json';
-        if (this.fileManager.isFileExists(configPath)) {
+        if (this.fileManager.isExists(configPath)) {
             try {
                 this.config = JSON.parse(this.fileManager.readFileContent(configPath));
             } catch (e) {

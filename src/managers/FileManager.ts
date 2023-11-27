@@ -27,7 +27,7 @@ export default class FileManager {
         this.projectAbsolutePath = this.findProjectRoot(__dirname);
     }
 
-    public isFileExists(relativeFilePath: string): boolean {
+    public isExists(relativeFilePath: string): boolean {
         return f.existsSync(this.toProjectAbsolutePath(relativeFilePath));
     }
 
