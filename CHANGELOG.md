@@ -1,5 +1,11 @@
 # @noob-squad/navi-express
 
+## 0.0.6
+
+### Patch Changes
+
+-   5db71b2: Attempting to fix WelcomeController when installed through npm
+
 ## 0.0.5
 
 ### Patch Changes
