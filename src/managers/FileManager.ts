@@ -65,7 +65,7 @@ export default class FileManager {
     }
 
     private findProjectRoot(directory: string): string {
-        if (f.existsSync(p.join(directory, 'package.json'))) {
+        if (!directory.endsWith('navi-express') && f.existsSync(p.join(directory, 'package.json'))) {
             return directory;
         }
 
