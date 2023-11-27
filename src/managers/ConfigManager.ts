@@ -17,6 +17,7 @@ import {HandlerConfig} from 'types/types';
 import FileManager from './FileManager';
 
 export default class ConfigManager {
+    private readonly WELCOME_CONTROLLER = '<<!WelcomeController!>>';
     private config: Config;
     private fileManager: FileManager;
 
@@ -39,11 +40,15 @@ export default class ConfigManager {
              * If neither a default configuration nor an environment-specific config path is found,
              * then the welcome controller will be used.
              */
-            this.config = {controllers: {path: '/welcome'}};
+            this.config = {controllers: {path: this.WELCOME_CONTROLLER}};
         }
     }
 
     public getControllersPath(): string {
+        if (this.config.controllers?.path === this.WELCOME_CONTROLLER) {
+            return '/node_modules/@noob-squad/navi-express/dist/welcome';
+        }
+
         return this.config.controllers?.path ?? '/src/controllers';
     }
 

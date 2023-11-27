@@ -1,6 +1,5 @@
 # Ignore everything
 *
 
-# Only publish dist and welcome directories
+# Only publish dist directory
 !/dist/
-!/welcome/
