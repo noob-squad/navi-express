@@ -29,7 +29,11 @@ export default class ConfigManager {
         this.config = {};
         const configPath = Bun.env.LUCIDUS_CONFIG ?? '/config/config.json';
         if (this.fileManager.isFileExists(configPath)) {
-            this.config = JSON.parse(this.fileManager.readFileContent(configPath));
+            try {
+                this.config = JSON.parse(this.fileManager.readFileContent(configPath));
+            } catch (e) {
+                throw new Error(`Invalid config format. Path: ${configPath}`);
+            }
         } else {
             /**
              * If neither a default configuration nor an environment-specific config path is found,
