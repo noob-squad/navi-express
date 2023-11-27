@@ -15,5 +15,5 @@
 import ErrEvent from '../events/ErrEvent';
 
 export default class ErrHandler {
-    public handle(event: ErrEvent): void {}
+    public handle(event: ErrEvent): void {} // eslint-disable-line @typescript-eslint/no-unused-vars
 }

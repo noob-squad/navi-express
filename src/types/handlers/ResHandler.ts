@@ -15,5 +15,5 @@
 import ResEvent from '../events/ResEvent';
 
 export default class ResHandler {
-    public handle(event: ResEvent): void {}
+    public handle(event: ResEvent): void {} // eslint-disable-line @typescript-eslint/no-unused-vars
 }
