@@ -1,5 +1,11 @@
 # @noob-squad/navi-express
 
+## 0.0.8
+
+### Patch Changes
+
+-   f455202: Fixed binding of route function to controller scope.
+
 ## 0.0.7
 
 ### Patch Changes
