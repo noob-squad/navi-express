@@ -13,5 +13,5 @@
  */
 
 export default class Controller {
-    [key: string]: (...args: any[]) => any; // eslint-disable-line @typescript-eslint/no-explicit-any
+    [key: string]: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 }
