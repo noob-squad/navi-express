@@ -102,7 +102,7 @@ export default class ControllerManager {
             if (!this.routeMap[path]) this.routeMap[path] = {};
             ['GET', 'POST', 'PATCH', 'DELETE'].forEach(m => {
                 if (options.exists('method') && options.get('method') !== m) return;
-                this.routeMap[path]![m] = {handler: classInstance[functionName]!, options};
+                this.routeMap[path]![m] = {handler: classInstance[functionName]!.bind(classInstance), options};
             });
         }
     }
