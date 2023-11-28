@@ -1,5 +1,11 @@
 # @noob-squad/navi-express
 
+## 0.0.7
+
+### Patch Changes
+
+-   06e0146: Making Controller more generic - allowing class properties.
+
 ## 0.0.6
 
 ### Patch Changes
