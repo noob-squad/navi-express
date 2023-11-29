@@ -1,5 +1,11 @@
 # @noob-squad/navi-express
 
+## 0.0.9
+
+### Patch Changes
+
+-   3439860: Changed ResJson to use Content-Type: application/json
+
 ## 0.0.8
 
 ### Patch Changes
