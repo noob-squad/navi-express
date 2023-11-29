@@ -1,5 +1,11 @@
 # @noob-squad/navi-express
 
+## 0.0.11
+
+### Patch Changes
+
+-   c22f39e: Making it possible to pass ResponseInit options to ResJson
+
 ## 0.0.10
 
 ### Patch Changes
