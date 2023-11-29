@@ -44,7 +44,7 @@ export default class ControllerManager {
         return this.routeMap[path]![method]!.options;
     }
 
-    public processRequest(req: Request): ResAny {
+    public async processRequest(req: Request): Promise<ResAny> {
         const path = new URL(req.url).pathname;
         const method = req.method;
         if (!this.routeMap[path]) {

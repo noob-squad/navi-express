@@ -58,11 +58,11 @@ export default class NaviExpress {
     }
 
     private createServeHandler(): (this: Server, request: Request, server: Server) => Response | Promise<Response> {
-        return (req: Request) => {
+        return async (req: Request) => {
             try {
                 const routeOptions = this.controllerManager.getRouteOptions(req);
                 const reqEvent = this.handlerManager.handleRequest(req, routeOptions);
-                const res = this.controllerManager.processRequest(reqEvent.getRequest());
+                const res = await this.controllerManager.processRequest(reqEvent.getRequest());
                 return this.handlerManager.handleResponse(res).getResponse();
             } catch (error) {
                 return this.handlerManager.handleError(error as Error).getResponse();
