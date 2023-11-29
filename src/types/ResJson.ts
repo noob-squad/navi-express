@@ -13,8 +13,8 @@
  */
 
 export default class ResJson extends Response {
-    constructor(body: object) {
-        super(JSON.stringify(body));
+    constructor(body: object, options?: ResponseInit) {
+        super(JSON.stringify(body), options);
         this.headers.set('Content-Type', 'application/json');
     }
 }
