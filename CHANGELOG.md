@@ -1,5 +1,11 @@
 # @noob-squad/navi-express
 
+## 0.0.10
+
+### Patch Changes
+
+-   144c973: Handling controller methods being asynchronous
+
 ## 0.0.9
 
 ### Patch Changes

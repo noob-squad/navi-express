@@ -1,6 +1,6 @@
 {
     "name": "@noob-squad/navi-express",
-    "version": "0.0.9",
+    "version": "0.0.10",
     "description": "NaviExpress is a streamlined API framework for Bun, crafted with TypeScript. Drawing inspiration from the Symfony framework, it's designed for simplicity and ease of use.",
     "main": "dist/index.cjs",
     "module": "dist/index.js",
