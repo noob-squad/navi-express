@@ -25,7 +25,7 @@ Your controllers, which handle incoming HTTP requests, should be placed in:
 ### `APP_PORT`
 This environment variable sets the port number on which your NaviExpress application will run.
 
-### `LUCIDUS_CONFIG` (To be renamed)
+### `NAVI_CONFIG`
 This variable specifies the path to your configuration file, overriding the default if needed.
 
 ## Configuration Parameters
@@ -48,7 +48,7 @@ Your `config.json` file includes several critical parameters:
 ### Understanding Config Parameters
 - **Controllers Path**: Specifies the directory where your controllers are located.
 - **Handlers**: Defines various handlers for different lifecycle events of a request.
-  - **onError**: Path to your error handling logic.
+  - **onError**: Array of event handlers of onError event that are triggered when an error occurs in the application.
   - **onRequest**: Path to request logging handler.
   - **onResponse**: Path to response logging handler.
 
@@ -82,7 +82,7 @@ The `@Route` decorator is crucial for defining the endpoint, HTTP method, and an
    - Configure the paths for controllers and handlers as needed.
 
 2. **Create a Controller**
-   - In the `/src/controllers` directory, create a new controller.
+   - In `/src/controller` or as specified by you in step 1 probably
    - Use the `@Route` decorator to define routes and HTTP methods.
 
 By following these steps and understanding the configuration and setup of NaviExpress, you're now ready to start building your web application with this powerful framework. Happy coding!
