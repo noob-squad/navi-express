@@ -38,6 +38,10 @@ export default class ReqEvent extends Event {
         return this.req;
     }
 
+    public setRequest(req: Request): void {
+        this.req = req;
+    }
+
     public getRequestType(): ReqType {
         return this.reqType;
     }
