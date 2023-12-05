@@ -1,5 +1,11 @@
 # @noob-squad/navi-express
 
+## 0.0.12
+
+### Patch Changes
+
+-   0b8bb4e: Added ability to setRequest onRequest event
+
 ## 0.0.11
 
 ### Patch Changes
